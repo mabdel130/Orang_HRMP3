@@ -100,7 +100,6 @@ public class P03_Add_Admin_and_SearchPage extends BasePage {
         return new P03_Add_Admin_and_SearchPage(driver);
     }
 
-
     public P03_Add_Admin_and_SearchPage searchforAddedUser(String employeeUsername) {
 
         driver.findElement(search_for_Admin_Button).sendKeys(employeeUsername);
@@ -123,6 +122,7 @@ public class P03_Add_Admin_and_SearchPage extends BasePage {
     public boolean verifySuccessmessage(String oneRecord) {
         return driver.findElement(confirmation_TextAfterSearch_Text).getText().contains(oneRecord);
     }
+
     public P03_Add_Admin_and_SearchPage scrollToSearchResults() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,500);");

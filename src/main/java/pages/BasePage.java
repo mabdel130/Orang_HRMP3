@@ -3,8 +3,6 @@ package pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
@@ -48,6 +46,7 @@ public class BasePage {
             e.printStackTrace();
         }
     }
+
     // TODO: Capture Screenshot
     public static void captureScreenshot(WebDriver driver, String screenshotName) {
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
@@ -59,16 +58,6 @@ public class BasePage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-    public static void explicitWait(WebDriver driver, By element) {
-        // explicit wait - to wait for the compose button to be click-able
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-    }
-
-    public BasePage Wait() throws InterruptedException {
-        Thread.sleep(1300);
-        return this;
     }
     public BasePage scrollToSearchResults() {
         JavascriptExecutor js = (JavascriptExecutor) driver;

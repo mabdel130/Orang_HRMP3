@@ -108,21 +108,16 @@ public class P02_Add_PIM_and_SearchPage extends BasePage {
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
-    public P02_Add_PIM_and_SearchPage search_By_id(long employee_Id) throws InterruptedException {
-        driver.findElement(this.employee_Id_in_Search_Text).sendKeys(String.valueOf(employee_Id));
-        Thread.sleep(5000);
-        return new P02_Add_PIM_and_SearchPage(driver);
-    }
-
     public P02_Add_PIM_and_SearchPage search_By_Name(String firstname) throws InterruptedException {
         driver.findElement(this.employee_Name_in_Search_Text).sendKeys(firstname);
         Thread.sleep(5000);
         return new P02_Add_PIM_and_SearchPage(driver);
     }
+
     public P02_Add_PIM_and_SearchPage get_confirmation_text_for_Search_PIM() throws InterruptedException {
         actualMessageforSearch_PIM = driver.findElement(this.confirmation_TextAfterSearch).getText();
         Thread.sleep(5000);
-       return new P02_Add_PIM_and_SearchPage(driver);
+        return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage scrollToSearchResults() {

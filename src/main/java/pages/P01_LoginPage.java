@@ -23,20 +23,16 @@ public class P01_LoginPage extends BasePage {
         driver.findElement(this.USERNAME_TEXT).sendKeys(username);
         return new P01_LoginPage(driver);
     }
-
     public P01_LoginPage enterPassword(String password) {
         driver.findElement(this.PASSWORD_TEXT).sendKeys(password);
         return new P01_LoginPage(driver);
     }
-
     public P01_LoginPage clickLoginButton() throws InterruptedException {
         driver.findElement(this.LOGIN_BUTTON).click();
         Thread.sleep(5000);
         return new P01_LoginPage(driver);
     }
-
     public P01_LoginPage getconfirmationtextforlogin() throws InterruptedException {
-
         actualMessagefor_Login = driver.findElement(this.actual_assertion_Text).getText();
         Thread.sleep(5000);
         return this;

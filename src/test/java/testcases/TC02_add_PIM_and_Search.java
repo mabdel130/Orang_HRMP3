@@ -29,8 +29,7 @@ public class TC02_add_PIM_and_Search extends BaseTest {
                 .enterUsername(usernamelogin)
                 .enterPassword(passwordlogin)
                 .clickLoginButton().getconfirmationtextforlogin();
-        // captureScreenshot(getDriver(), "LoginWithValid Data");
-
+        captureScreenshot(getDriver(), "LoginWithValid Data");
         Assert.assertEquals(actualMessagefor_Login, expected_Messagefor_Login, "Text does not match!");
 
 
@@ -48,12 +47,15 @@ public class TC02_add_PIM_and_Search extends BaseTest {
                 .add_password(password)
                 .confirm_password(password)
                 .click_on_save()
-                .getconfirmationtextforAdd_PIM()
-                .click_on_PIMButton()
-                .search_By_Name(firstname)
-                .click_on_search_for_PIM().scrollToSearchResults().get_confirmation_text_for_Search_PIM();
-        // captureScreenshot(getDriver(), "Add_PIM");
+                .getconfirmationtextforAdd_PIM();
+        captureScreenshot(getDriver(), "Search_PIM");
         Assert.assertEquals(actualMessageforAdd_PIM, expected_TextforAdd_PIM, "Text does not match!");
+        new P02_Add_PIM_and_SearchPage(getDriver()).click_on_PIMButton()
+                .search_By_Name(firstname)
+                .click_on_search_for_PIM()
+                .scrollToSearchResults()
+                .get_confirmation_text_for_Search_PIM();
+        captureScreenshot(getDriver(), "Search_PIM");
         Assert.assertEquals(actualMessageforSearch_PIM, expected_TextforSearch_PIM, "Text does not match!");
 
     }

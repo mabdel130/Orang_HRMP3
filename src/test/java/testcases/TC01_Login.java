@@ -18,9 +18,10 @@ public class TC01_Login extends BaseTest {
         new P01_LoginPage(getDriver())
                 .enterUsername(usernamelogin)
                 .enterPassword(passwordlogin)
-                .clickLoginButton().getconfirmationtextforlogin();
-       // captureScreenshot(getDriver(), "LoginWithValid Data");
-        Assert.assertEquals( actualMessagefor_Login,expected_Messagefor_Login, "Text does not match!");
+                .clickLoginButton()
+                .getconfirmationtextforlogin();
+        captureScreenshot(getDriver(), "LoginWithValid Data");
+        Assert.assertEquals(actualMessagefor_Login, expected_Messagefor_Login, "Text does not match!");
 
 
     }
