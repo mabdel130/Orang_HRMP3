@@ -19,23 +19,19 @@ public class BaseTest {
         MyScreenRecorder.startRecording("LOGIN.TEST");
     }
 
-    @Parameters("browsername")
+    @Parameters("browserName")
     @BeforeTest
-    public void OpenBrower(@Optional String browsername) throws AWTException {
-        setDriver(DriverFactory.getNewInstance(""));
+    public void OpenBrowser(@Optional String browserName) throws AWTException {
+        setDriver(DriverFactory.getNewInstance(browserName));
 
         getDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-
         getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         //openBrowserNetworkTab();
-
     }
-
     @AfterTest
     public void TearDown() {
         quitBrowser(getDriver());
     }
-
 
     @AfterSuite
     public void afterSuite() throws Exception {

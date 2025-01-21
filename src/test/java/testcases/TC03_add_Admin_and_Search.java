@@ -22,7 +22,7 @@ public class TC03_add_Admin_and_Search extends BaseTest {
                 .enterUsername(usernamelogin)
                 .enterPassword(passwordlogin)
                 .clickLoginButton().getconfirmationtextforlogin();
-        // captureScreenshot(getDriver(), "LoginWithValid Data");
+        captureScreenshot(getDriver(), "LoginWithValid Data");
         Assert.assertEquals(actualMessagefor_Login, expected_Messagefor_Login, "Text does not match!");
 
         // TODO: ADD Admin_and_Search

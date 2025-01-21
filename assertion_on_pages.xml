@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Assertion on Pages">
+    <test name="Assertions">
+        <classes>
+            <class name="testcases.TC04_take_Assertions_for_allPages">
+                <methods>
+                    <include name="assert_for_leave_Page_P"/>
+                    <exclude name="assert_for_Dashboard_Page_P"/>
+                    <include name="assert_for_Time_Page_P"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
