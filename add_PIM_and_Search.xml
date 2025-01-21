@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ADD PIM and search">
+    <test name="Add_PIM_Valid data">
+        <classes>
+            <class name="testcases.TC02_add_PIM_and_Search">
+                <methods>
+                    <include name="add_PIM_and_Search_Valid_data_P"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

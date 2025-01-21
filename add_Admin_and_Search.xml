@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ADD Admin And search">
+    <test name="Add_Admin_Valid data">
+        <classes>
+            <class name="testcases.TC03_add_Admin_and_Search">
+                <methods>
+                    <include name="add_Admin_and_Search_Valid_data_P"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
