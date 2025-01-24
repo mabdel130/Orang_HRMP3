@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Orange_HRMP3" parallel="classes" thread-count="3">
-    <parameter name="browserName" value="chrome-headless"/>
+    <parameter name="browserName" value=""/>
     <suite-files>
         <suite-file path="add_PIM_and_Search.xml"/>
         <suite-file path="add_Admin_and_Search.xml"/>

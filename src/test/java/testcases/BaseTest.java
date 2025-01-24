@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import static drivers.DriverHolder.getDriver;
 import static drivers.DriverHolder.setDriver;
 import static pages.BasePage.quitBrowser;
+import static util.Utlity.openBrowserNetworkTab;
 
 public class BaseTest {
     String usernamelogin = "Admin";
@@ -26,12 +27,12 @@ public class BaseTest {
 
         getDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        //openBrowserNetworkTab();
+       openBrowserNetworkTab();
     }
-   //@AfterTest
-   // public void TearDown() {
-        //quitBrowser(getDriver());
-    //}
+  @AfterTest
+  public void TearDown() {
+     quitBrowser(getDriver());
+   }
 
     @AfterSuite
     public void afterSuite() throws Exception {

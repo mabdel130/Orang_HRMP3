@@ -7,7 +7,7 @@ public class P04_take_Assertions_for_allPages extends BasePage {
     public P04_take_Assertions_for_allPages(WebDriver driver) {
         super(driver);
     }
-    public static String expectedMassage_for_Leave = "(1) Record Found";
+    public static String expectedMassage_for_Leave = "No Records Found";
     public static String actualMessage_for_Leave;
 
     public static String expectedMassage_for_Dashboard = "Employees on Leave Today";
