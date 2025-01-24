@@ -28,10 +28,10 @@ public class BaseTest {
         getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         //openBrowserNetworkTab();
     }
-    @AfterTest
-    public void TearDown() {
-        quitBrowser(getDriver());
-    }
+   //@AfterTest
+   // public void TearDown() {
+        //quitBrowser(getDriver());
+    //}
 
     @AfterSuite
     public void afterSuite() throws Exception {

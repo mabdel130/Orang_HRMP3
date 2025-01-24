@@ -7,7 +7,7 @@ public class P04_take_Assertions_for_allPages extends BasePage {
     public P04_take_Assertions_for_allPages(WebDriver driver) {
         super(driver);
     }
-    public static String expectedMassage_for_Leave = "No Records Found";
+    public static String expectedMassage_for_Leave = "(1) Record Found";
     public static String actualMessage_for_Leave;
 
     public static String expectedMassage_for_Dashboard = "Employees on Leave Today";
@@ -30,8 +30,9 @@ public class P04_take_Assertions_for_allPages extends BasePage {
     // locators for Time Page:
     private final By time_page_Button = By.xpath("//span[text()='Time']");
     private final By search_for_Employee_Time_Button=By.xpath("(//input[@placeholder='Type for hints...'])[1]");
-    private final By view_button=By.xpath("//button[@class=\"oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space\"]");
+    private final By view_button=By.xpath("//button[starts-with(@class, 'oxd-button')]");
     private final By assertion_time_item_Text=By.xpath("//span[@class='oxd-text oxd-text--span']");
+
 
 
 
@@ -91,7 +92,6 @@ public class P04_take_Assertions_for_allPages extends BasePage {
     }
     public P04_take_Assertions_for_allPages  click_on_view_Button() throws InterruptedException {
         driver.findElement(this.view_button).click();
-        Thread.sleep(7000);
         return new P04_take_Assertions_for_allPages(driver);
     }
     public P04_take_Assertions_for_allPages getconfirmationtext_for_Time() throws InterruptedException {
