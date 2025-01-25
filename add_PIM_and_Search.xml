@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ADD PIM and Search">
     <!-- Parameter for browser -->
-    <parameter name="browserName" value="" />
+    <parameter name="browserName" value="chrome-headless" />
     <!-- Test case for Login -->
     <test name="Add_PIM_Valid_Data">
         <classes>

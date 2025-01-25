@@ -29,11 +29,11 @@ public class P01_LoginPage extends BasePage {
         return new P01_LoginPage(driver);
     }
     public P01_LoginPage clickLoginButton() throws InterruptedException {
-        new CustomeDecorator(driver,this.LOGIN_BUTTON,5000).click();
+        new CustomeDecorator(driver,this.LOGIN_BUTTON,9000).click();
         return new P01_LoginPage(driver);
     }
     public P01_LoginPage getconfirmationtextforlogin() throws InterruptedException {
-        new CustomeDecorator(driver,this.actual_assertion_Text,5000).getText();
+        new CustomeDecorator(driver,this.actual_assertion_Text,9000).getText();
         return new P01_LoginPage(driver);
     }
 }

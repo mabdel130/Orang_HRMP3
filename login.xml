@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="login With valid Data">
-    <parameter name="browserName" value="chrome-headless"/>
+    <parameter name="browserName" value=""/>
     <test name="Login With valid data">
         <classes>
             <class name="testcases.TC01_Login">

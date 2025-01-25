@@ -44,6 +44,13 @@ public class DriverFactory {
                 chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
                 chromeOptions.setExperimentalOption("useAutomationExtension", false);
                 chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
+                ChromeOptions options = new ChromeOptions();
+                chromeOptions.setExperimentalOption("mobileEmulation", Map.of("deviceName", "Galaxy S5")); // Example device name
+
+                // Other options (optional)
+                chromeOptions.addArguments("--disable-gpu");
+                chromeOptions.addArguments("--disable-extensions");
+
                 chromeOptions.addArguments("start-maximized");
                 chromeOptions.addArguments("--incognito");
                 chromeOptions.addArguments("--disable-web-security");
@@ -51,6 +58,7 @@ public class DriverFactory {
                 chromeOptions.addArguments("--remote-allow-origins=*");
                 chromeOptions.addArguments("--disable-notifications");
                 chromeOptions.setExperimentalOption("prefs", prefs);
+
                 chromeOptions.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
                 capabilities = new DesiredCapabilities();
                 capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);

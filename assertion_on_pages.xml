@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Assertion on Pages">
-    <parameter name="browserName" value="" />
+    <parameter name="browserName" value="chrome-headless" />
     <test name="take_Assertions_for_allPages">
         <classes>
             <class name="testcases.TC01_Login">
