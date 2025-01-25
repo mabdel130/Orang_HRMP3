@@ -1,5 +1,6 @@
 package pages;
 
+import actions.CustomeDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -30,17 +31,17 @@ public class P03_Add_Admin_and_SearchPage extends BasePage {
     private final By confirmation_TextAfterSearch_Text = By.xpath("//span[normalize-space()='(1) Record Found']");
 
     public P03_Add_Admin_and_SearchPage click_on_Admin_From_Menu() {
-        driver.findElement(this.admin_Button).click();
+        new CustomeDecorator(driver,this.admin_Button,100).click();
         return new P03_Add_Admin_and_SearchPage(driver);
     }
 
     public P03_Add_Admin_and_SearchPage click_to_Add_new_Admin() {
-        driver.findElement(this.AddAdmin_Button).click();
+        new CustomeDecorator(driver,this.AddAdmin_Button,200).click();
         return new P03_Add_Admin_and_SearchPage(driver);
     }
 
     public P03_Add_Admin_and_SearchPage click_on_Admin_User() {
-        driver.findElement(this.AdminDropDown_DWlist).click();
+        new CustomeDecorator(driver,this.AdminDropDown_DWlist,0).click();
         return new P03_Add_Admin_and_SearchPage(driver);
     }
 
@@ -56,7 +57,7 @@ public class P03_Add_Admin_and_SearchPage extends BasePage {
 
 
     public P03_Add_Admin_and_SearchPage setEmployee_Name(String firstname) {
-        driver.findElement(this.employeefirstName_Text).sendKeys(firstname);
+        new CustomeDecorator(driver,this.employeefirstName_Text,0).sendKeys(firstname);
         return new P03_Add_Admin_and_SearchPage(driver);
     }
 
@@ -66,9 +67,8 @@ public class P03_Add_Admin_and_SearchPage extends BasePage {
     }
 
     public P03_Add_Admin_and_SearchPage get_EmployeeName() throws InterruptedException {
-        Thread.sleep(2000);
-        driver.findElement(this.employeefirstName_Text).sendKeys(Keys.ARROW_DOWN);
-        driver.findElement(this.employeefirstName_Text).sendKeys(Keys.ENTER);
+        new CustomeDecorator(driver,this.employeefirstName_Text,1000).sendKeys(Keys.ARROW_DOWN);
+        new CustomeDecorator(driver,this.employeefirstName_Text,100).sendKeys(Keys.ENTER);
         return new P03_Add_Admin_and_SearchPage(driver);
     }
 
@@ -85,42 +85,43 @@ public class P03_Add_Admin_and_SearchPage extends BasePage {
     }
 
     public P03_Add_Admin_and_SearchPage setUserName_Text(String employeeUsername) {
-        driver.findElement(this.userName_Text).sendKeys(employeeUsername);
+        new CustomeDecorator(driver,this.userName_Text,0).sendKeys(employeeUsername);
         return new P03_Add_Admin_and_SearchPage(driver);
     }
 
     public P03_Add_Admin_and_SearchPage setPassword_Text(String addPassword) {
-        driver.findElement(this.password_Text).sendKeys(addPassword);
+        new CustomeDecorator(driver,this.password_Text,0).sendKeys(addPassword);
         return new P03_Add_Admin_and_SearchPage(driver);
     }
 
     public P03_Add_Admin_and_SearchPage setConfirmPassword_Text(String addPassword) {
 
-        driver.findElement(this.confirmPassword_Text).sendKeys(addPassword);
+        new CustomeDecorator(driver,this.confirmPassword_Text,0).sendKeys(addPassword);
         return new P03_Add_Admin_and_SearchPage(driver);
     }
 
     public P03_Add_Admin_and_SearchPage searchforAddedUser(String employeeUsername) {
 
-        driver.findElement(search_for_Admin_Button).sendKeys(employeeUsername);
-        return this;
+        new CustomeDecorator(driver,this.search_for_Admin_Button,200).sendKeys(employeeUsername);
+        return new P03_Add_Admin_and_SearchPage(driver);
     }
 
     public P03_Add_Admin_and_SearchPage press_to_SearchButton() throws InterruptedException {
-        Thread.sleep(2000);
-        driver.findElement(employee_Name_in_Search_Text).click();
+        new CustomeDecorator(driver,this.employee_Name_in_Search_Text,1000).click();
         return new P03_Add_Admin_and_SearchPage(driver);
     }
 
     public P03_Add_Admin_and_SearchPage saveResults() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.findElement(saveButton).click();
-        Thread.sleep(6000);
+
+        new CustomeDecorator(driver,this.saveButton,1000).click();
+
         return new P03_Add_Admin_and_SearchPage(driver);
     }
 
     public boolean verifySuccessmessage(String oneRecord) {
-        return driver.findElement(confirmation_TextAfterSearch_Text).getText().contains(oneRecord);
+       return new CustomeDecorator(driver,this.confirmation_TextAfterSearch_Text,1000).getText().contains(oneRecord);
+
+
     }
 
     public P03_Add_Admin_and_SearchPage scrollToSearchResults() {

@@ -1,5 +1,6 @@
 package pages;
 
+import actions.CustomeDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -20,21 +21,19 @@ public class P01_LoginPage extends BasePage {
 
     // TODO: public action methods
     public P01_LoginPage enterUsername(String username) {
-        driver.findElement(this.USERNAME_TEXT).sendKeys(username);
+        new CustomeDecorator(driver,this.USERNAME_TEXT,0).sendKeys(username);
         return new P01_LoginPage(driver);
     }
     public P01_LoginPage enterPassword(String password) {
-        driver.findElement(this.PASSWORD_TEXT).sendKeys(password);
+        new CustomeDecorator(driver,this.PASSWORD_TEXT,0).sendKeys(password);
         return new P01_LoginPage(driver);
     }
     public P01_LoginPage clickLoginButton() throws InterruptedException {
-        driver.findElement(this.LOGIN_BUTTON).click();
-        Thread.sleep(5000);
+        new CustomeDecorator(driver,this.LOGIN_BUTTON,5000).click();
         return new P01_LoginPage(driver);
     }
     public P01_LoginPage getconfirmationtextforlogin() throws InterruptedException {
-        actualMessagefor_Login = driver.findElement(this.actual_assertion_Text).getText();
-        Thread.sleep(5000);
-        return this;
+        new CustomeDecorator(driver,this.actual_assertion_Text,5000).getText();
+        return new P01_LoginPage(driver);
     }
 }

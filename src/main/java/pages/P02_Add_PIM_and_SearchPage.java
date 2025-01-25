@@ -1,5 +1,6 @@
 package pages;
 
+import actions.CustomeDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -37,86 +38,80 @@ public class P02_Add_PIM_and_SearchPage extends BasePage {
 
     // TODO: public action methods
     public P02_Add_PIM_and_SearchPage click_on_PIMButton() throws InterruptedException {
-        driver.findElement(this.pim_Button).click();
-        Thread.sleep(5000);
+        new CustomeDecorator(driver, this.pim_Button, 100).click();
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage add_newPIM() {
-        driver.findElement(this.add_newPIM_Button).click();
+        new CustomeDecorator(driver, this.add_newPIM_Button, 100).click();
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage add_first_name(String firstname) {
-        driver.findElement(this.firstName_Text).sendKeys(firstname);
+        new CustomeDecorator(driver, this.firstName_Text, 100).sendKeys(firstname);
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage add_middle_name(String middlename) {
-        driver.findElement(this.middleName_Text).sendKeys(middlename);
+        new CustomeDecorator(driver, this.middleName_Text, 0).sendKeys(middlename);
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage add_last_name(String lastname) {
-        driver.findElement(this.lastName_Text).sendKeys(lastname);
+        new CustomeDecorator(driver, this.lastName_Text, 0).sendKeys(lastname);
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage add_employee_Id(long employee_Id) {
-        driver.findElement(this.employee_Id_Text).sendKeys(String.valueOf(employee_Id));
+        new CustomeDecorator(driver, this.employee_Id_Text, 100).sendKeys(String.valueOf(employee_Id));
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage loginDetails() throws InterruptedException {
-        driver.findElement(this.loginDetails_Button).click();
-        Thread.sleep(5000);
+        new CustomeDecorator(driver, this.loginDetails_Button, 100).click();
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage add_user_name(String username) throws InterruptedException {
-        driver.findElement(this.username_Text).sendKeys(username);
+        new CustomeDecorator(driver, this.username_Text, 100).sendKeys(username);
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage add_password(String password) throws InterruptedException {
-        driver.findElement(this.password_Text).sendKeys(password);
-        Thread.sleep(5000);
+        new CustomeDecorator(driver, this.password_Text, 100).sendKeys(password);
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage confirm_password(String password) throws InterruptedException {
-        driver.findElement(this.confirmPassword_Text).sendKeys(password);
+        new CustomeDecorator(driver, this.confirmPassword_Text, 100).sendKeys(password);
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage click_on_save() throws InterruptedException {
-        driver.findElement(this.save_Button).click();
-        Thread.sleep(7000);
+        new CustomeDecorator(driver, this.save_Button, 3000).click();
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage getconfirmationtextforAdd_PIM() throws InterruptedException {
 
-        actualMessageforAdd_PIM = driver.findElement(this.confirmation_Text).getText();
-        Thread.sleep(7000);
-        return this;
+        actualMessageforAdd_PIM = new CustomeDecorator(driver, this.confirmation_Text, 100).getText();
+
+        return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage click_on_search_for_PIM() throws InterruptedException {
-        driver.findElement(this.search_for_PIM_Button).click();
-        Thread.sleep(7000);
+        new CustomeDecorator(driver, this.search_for_PIM_Button, 100).click();
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage search_By_Name(String firstname) throws InterruptedException {
-        driver.findElement(this.employee_Name_in_Search_Text).sendKeys(firstname);
-        Thread.sleep(5000);
+        new CustomeDecorator(driver, this.employee_Name_in_Search_Text, 100).sendKeys(firstname);
+
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
     public P02_Add_PIM_and_SearchPage get_confirmation_text_for_Search_PIM() throws InterruptedException {
-        actualMessageforSearch_PIM = driver.findElement(this.confirmation_TextAfterSearch).getText();
-        Thread.sleep(5000);
+        actualMessageforSearch_PIM = new CustomeDecorator(driver, this.confirmation_TextAfterSearch, 200).getText();
         return new P02_Add_PIM_and_SearchPage(driver);
     }
 
