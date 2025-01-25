@@ -1,5 +1,4 @@
 package drivers;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,10 +7,8 @@ import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import java.util.HashMap;
 import java.util.Map;
-
 public class DriverFactory {
     public static WebDriver getNewInstance(String browserName) {
         ChromeOptions chromeOptions;

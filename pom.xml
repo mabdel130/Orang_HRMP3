@@ -175,6 +175,11 @@
             <artifactId>monte-screen-recorder</artifactId>
             <version>0.7.7.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v129</artifactId>
+            <version>4.27.0</version> <!-- Match this with the Selenium version -->
+        </dependency>
     </dependencies>
 
 </project>

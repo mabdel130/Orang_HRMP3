@@ -14,19 +14,8 @@ import static util.Utlity.*;
 
 public class TC04_take_Assertions_for_allPages extends BaseTest {
     static String firstname = generateRandomFirstName();
-    @Test(priority = 1, description = "login")
-    public void login_with_valid_data_P() throws InterruptedException {
-// TODO: login to app
-        new P01_LoginPage(getDriver())
-                .enterUsername(usernamelogin)
-                .enterPassword(passwordlogin)
-                .clickLoginButton().getconfirmationtextforlogin();
-        captureScreenshot(getDriver(), "LoginWithValid Data");
-        Assert.assertEquals(actualMessagefor_Login, expected_Messagefor_Login, "Text does not match!");
-    }
     @Test(priority = 2, description = "assert for leave Page")
     public void assert_for_leave_Page_P() throws InterruptedException {
-
 // TODO: assert for leave Page
         new P04_take_Assertions_for_allPages(getDriver())
                 .click_on_Leave_From_Menu()
@@ -53,7 +42,6 @@ public class TC04_take_Assertions_for_allPages extends BaseTest {
     }
     @Test(priority = 4, description = "assert for Time Page")
     public void assert_for_Time_Page_P() throws InterruptedException {
-
         // TODO: assert for Time Page
         new P04_take_Assertions_for_allPages(getDriver())
                 .click_on_Time_From_Menu()

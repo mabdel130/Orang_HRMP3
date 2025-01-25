@@ -14,17 +14,8 @@ public class TC03_add_Admin_and_Search extends BaseTest {
 
     static String username = generateUniqueUsername();
     static String password = generateDynamicPassword();
-
     @Test(priority = 1, description = "ADD Admin_and_Search")
     public void add_Admin_and_Search_Valid_data_P() throws InterruptedException {
-// TODO: login to app
-        new P01_LoginPage(getDriver())
-                .enterUsername(usernamelogin)
-                .enterPassword(passwordlogin)
-                .clickLoginButton().getconfirmationtextforlogin();
-        captureScreenshot(getDriver(), "LoginWithValid Data");
-        Assert.assertEquals(actualMessagefor_Login, expected_Messagefor_Login, "Text does not match!");
-
         // TODO: ADD Admin_and_Search
         new P03_Add_Admin_and_SearchPage(getDriver()).
                 click_on_Admin_From_Menu()

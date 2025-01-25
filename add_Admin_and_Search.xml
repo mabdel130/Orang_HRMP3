@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="ADD Admin And search">
-    <test name="Add_Admin_Valid data">
+<suite name="ADD Admin And Search">
+    <!-- Parameter for browser -->
+    <parameter name="browserName" value="" />
+    <test name="Add_Admin_Valid_Data">
         <classes>
+            <class name="testcases.TC01_Login">
+                <methods>
+                    <include name="login_to_my_account_With_Valid_data_P" />
+                </methods>
+            </class>
             <class name="testcases.TC03_add_Admin_and_Search">
                 <methods>
-                    <include name="add_Admin_and_Search_Valid_data_P"/>
+                    <include name="add_Admin_and_Search_Valid_data_P" />
                 </methods>
             </class>
         </classes>
     </test>
-
 </suite>

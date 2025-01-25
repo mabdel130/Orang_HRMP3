@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Assertion on Pages">
-    <parameter name="browserName" value=""/>
-    <test name="Assertions">
+    <parameter name="browserName" value="" />
+    <test name="take_Assertions_for_allPages">
         <classes>
+            <class name="testcases.TC01_Login">
+                <methods>
+                    <include name="login_to_my_account_With_Valid_data_P" />
+                </methods>
+            </class>
             <class name="testcases.TC04_take_Assertions_for_allPages">
                 <methods>
-                    <include name="login_with_valid_data_P"/>
-                    <include name="assert_for_leave_Page_P"/>
-                    <include name="assert_for_Dashboard_Page_P"/>
-                    <include name="assert_for_Time_Page_P"/>
+                    <include name="assert_for_leave_Page_P" />
+                    <include name="assert_for_Dashboard_Page_P" />
+                    <include name="assert_for_Time_Page_P" />
                 </methods>
             </class>
         </classes>
     </test>
-
 </suite>

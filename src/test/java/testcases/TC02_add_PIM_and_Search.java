@@ -12,29 +12,15 @@ import static pages.P02_Add_PIM_and_SearchPage.*;
 import static util.Utlity.*;
 
 public class TC02_add_PIM_and_Search extends BaseTest {
-
-
     static String firstname = generateRandomFirstName();
     static String middlename = generateRandomMiddleName();
     static String lastname = generateRandomLastName();
     static long employee_Id = generateUniqueEmployeeId();
     static String username = generateUniqueUsername();
     static String password = generateDynamicPassword();
-
-
     @Test(priority = 1, description = "Add Pim data")
     public void add_PIM_and_Search_Valid_data_P() throws InterruptedException {
-// TODO: login to app
-        new P01_LoginPage(getDriver())
-                .enterUsername(usernamelogin)
-                .enterPassword(passwordlogin)
-                .clickLoginButton().getconfirmationtextforlogin();
-        captureScreenshot(getDriver(), "LoginWithValid Data");
-        Assert.assertEquals(actualMessagefor_Login, expected_Messagefor_Login, "Text does not match!");
-
-
 // TODO: ADD PIM Data
-
         new P02_Add_PIM_and_SearchPage(getDriver())
                 .click_on_PIMButton()
                 .add_newPIM()

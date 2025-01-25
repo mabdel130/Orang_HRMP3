@@ -27,7 +27,7 @@ public class BaseTest {
 
         getDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-       openBrowserNetworkTab();
+    //   openBrowserNetworkTab();
     }
   @AfterTest
   public void TearDown() {
